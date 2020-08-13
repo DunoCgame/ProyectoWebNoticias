@@ -1,0 +1,130 @@
+
+
+/*IMPORT FUENTE*//*IMPORT FUENTE*//*IMPORT FUENTE*//*IMPORT FUENTE*//*IMPORT FUENTE*//*IMPORT FUENTE*/
+@font-face{
+	
+font-family:RobotoSlabVariable;
+src: url("fonts_text/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf");
+  
+}
+@font-face{
+	
+font-family:RobotoSlabBlack;
+src: url("fonts_text/Roboto_Slab/static/RobotoSlab-Black.ttf");
+  
+}
+@font-face{
+	
+font-family:RobotoSlabBold;
+src: url("fonts_text/Roboto_Slab/static/RobotoSlab-Bold.ttf");
+  
+}
+@font-face{
+	
+font-family:RobotoSlabRegular;
+src: url("fonts_text/Roboto_Slab/static/RobotoSlab-Regular.ttf");
+  
+}
+@font-face{
+	
+font-family:RobotoSlabMedium;
+src: url("fonts_text/Roboto_Slab/static/RobotoSlab-Medium.ttf");
+  
+}
+@font-face{
+	
+font-family:RobotoSlabLight;
+src: url("fonts_text/Roboto_Slab/static/RobotoSlab-Light.ttf");
+  
+}
+/*IMPORT FUENTE*//*IMPORT FUENTE*//*IMPORT FUENTE*//*IMPORT FUENTE*//*IMPORT FUENTE*//*IMPORT FUENTE*/
+
+
+
+:root{
+	
+/* --color-body:#cccccc; */
+--color-body:#d9d9d9;
+--color-main:#d9d9d9;
+--color-header:#d9d9d9;
+/* --color-navar:#006666; */
+--color-navar:#00001a;
+--color-text-navar:white;
+--color-aside:#00001a;
+--color-foooter:#00001a;
+
+
+
+/*BARA SOCIAL*/
+--Socialcolor:black;
+/*twitter*/
+--Socialcolorfondotwitter:#00abf0;
+--Socialcolortwitter:#fff;
+/*facebook*/
+--Socialcolorfondofacebook:#3b5998;
+--Socialcolorfacebook:#fff;
+/*instagram*/
+--Socialcolorfondoinstagram:linear-gradient(to bottom right, #993366 35%, #ffff00 89%);
+--Socialcolorinstagram:#fff;
+/*telegram*/
+--Socialcolorfondotelegram:#00abf0;
+--Socialcolortelegram:#fff;
+/*blogger:*/
+--Socialcolorfondoblogger:#ffb900;
+--Socialcolorblogger:#fff;
+/*Patreon*/
+--SocialcolorfondoPatreon:#ffa31a;
+--SocialcolorPatreon:#fff;
+/*youtube*/
+--Socialcolorfondoyoutube:#e60000;
+--Socialcoloryoutube:#fff;
+/*BARA SOCIAL*/
+
+/**letrero categoria articulos y marquee**/
+--colorLetreroNewsArticulo:#003399;
+/**letrero categoria articulos**/
+/**IndicadorSeccion**/
+	--colorIndicadorSeccion:#001a4d;
+/**IndicadorSeccion**/
+
+--BotonBuscar:#003399;
+/*fuentes*/
+--RobotoSlabLight:RobotoSlabLight;
+--RobotoSlabMedium:RobotoSlabMedium;
+--RobotoSlabRegular:RobotoSlabRegular;
+--RobotoSlabBold:RobotoSlabBold;
+--RobotoSlabBlack:RobotoSlabBlack;
+--RobotoSlabVariable:RobotoSlabVariable;
+
+/*fuentes*/
+	
+}
+
+*{
+	padding:0px;
+	margin:0px;
+}
+
+.body{
+	background:var(--color-body);
+	
+}
+
+a{
+	text-decoration:none;
+}
+
+p{
+	font-family:var(--RobotoSlabRegular);
+	/* font-family:var(--RobotoSlabLight); */
+
+}
+
+h2{
+	font-family:var(--RobotoSlabBold);	
+}
+
+.navbar-item>.item>.link{
+	font-family:var(--RobotoSlabBold);	
+	
+}

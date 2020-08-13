@@ -1,0 +1,28 @@
+
+
+.ContainerClase{
+	
+	display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(5, auto);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+
+
+
+	 grid-template-areas:
+				"header header  header header"
+				"main main main main"
+				"main main main main" 
+				"aside aside aside aside"
+				"footer footer footer footer";
+}
+
+.header{ 	    	grid-area:header;        }
+.main{ 			grid-area:main; 		 	 } 
+.main-single{ 			grid-area:main; 		 	 } 
+.main-page{ 			grid-area:main; 		 	 } 
+.sidebar { 			grid-area:aside; 		 	 } 	
+.footer{ 			grid-area:footer; 		 	 } 
+	 
+	

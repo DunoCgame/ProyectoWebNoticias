@@ -1,0 +1,438 @@
+/**Mediano**//**Mediano**//**Mediano**/
+@media(min-width:768px) and (max-width:1280px){
+
+* {box-sizing:border-box}
+
+.slideshow-container {
+	width:60%;
+	/* margin:6px 6px 0px 6px; */
+	
+  position: relative;
+
+
+}
+
+
+.mySlides {
+  display: none;
+}
+
+.mySlides>img{
+	width:100%;
+	height:320px;
+	
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  /* background:red; */
+}
+
+/* Position the "next button" to the right */
+.next {
+	
+  right:0;
+  margin-right:15px;
+  /* border-radius: 3px 0 0 3px; */
+}
+
+.prev{
+
+	left:0;
+	margin-left:15px;
+	  /* border-radius: 0 3px 3px 0; */
+	
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text>h2>a {
+  color: #f2f2f2;
+  font-size: 35px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 88%;
+  text-align: center;
+	top:70%;
+	
+}
+
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+}
+
+/**Mediano**//**Mediano**//**Mediano**/
+/**grande**//**grande**//**grande**/
+/* @media(min-width:1280px) and (max-width: 1440px){ */
+/* * {box-sizing:border-box} */
+
+
+/* .slideshow-container { */
+/* width:60%; */
+	/* margin:10px; */
+  /* position: relative; */
+
+/* } */
+
+
+/* .mySlides { */
+  /* display: none; */
+/* } */
+
+/* .img-slide{ */
+	/* width:100%; */
+	/* height:220px; */
+	
+/* } */
+
+/* Next & previous buttons */
+/* .prev, .next { */
+  /* cursor: pointer; */
+  /* position: absolute; */
+  /* top: 50%; */
+  /* width: auto; */
+  /* margin-top: -22px; */
+  /* padding: 16px; */
+  /* color: white; */
+  /* font-weight: bold; */
+  /* font-size: 18px; */
+  /* transition: 0.6s ease; */
+  /* border-radius: 0 3px 3px 0; */
+  /* user-select: none; */
+  /* background:red;  */
+/* } */
+
+/* Position the "next button" to the right  */
+/* .next { */
+  /* right: 0; */
+  /* border-radius: 3px 0 0 3px; */
+/* } */
+
+/* On hover, add a black background color with a little bit see-through  */
+/* .prev:hover, .next:hover { */
+  /* background-color: rgba(0,0,0,0.8); */
+/* } */
+
+/* Caption text  */
+/* .text { */
+  /* color: #f2f2f2; */
+  /* font-size: 35px; */
+  /* padding: 8px 12px; */
+  /* position: absolute; */
+  /* bottom: 8px; */
+  /* width: 88%; */
+  /* text-align: center; */
+	/* top:70%; */
+	
+/* } */
+
+
+/* @-webkit-keyframes fade { */
+  /* from {opacity: .4} */
+   /* to {opacity: 1} */
+/* } */
+
+/* @keyframes fade { */
+   /* from {opacity: .4} */
+   /* to {opacity: 1} */
+ /* } */
+
+
+/* } */
+	
+/**Extra grande***/	/**Extra grande***/	/**Extra grande***/	
+
+/* @media(min-width:1440px) and (max-width: 1920px){ */
+	
+	/* * {box-sizing:border-box} */
+
+
+/* .slideshow-container { */
+/* width:50%; */
+	/* margin:10px; */
+  /* position: relative; */
+
+/* } */
+
+
+/* .mySlides { */
+  /* display: none; */
+/* } */
+
+/* .img-slide{ */
+	/* width:100%; */
+	/* height:220px;  */
+	
+/* } */
+
+/* /* Next & previous buttons */ 
+/* .prev, .next { */
+  /* cursor: pointer; */
+  /* position: absolute; */
+  /* top: 50%; */
+  /* width: auto; */
+  /* margin-top: -22px; */
+  /* padding: 16px; */
+  /* color: white; */
+  /* font-weight: bold; */
+  /* font-size: 18px; */
+  /* transition: 0.6s ease; */
+  /* border-radius: 0 3px 3px 0; */
+  /* user-select: none; */
+  /* background:red;  */
+/* } */
+
+/* /* Position the "next button" to the right  */ 
+/* .next { */
+  /* right: 0; */
+  /* border-radius: 3px 0 0 3px; */
+/* } */
+
+/* /* On hover, add a black background color with a little bit see-through */ 
+/* .prev:hover, .next:hover { */
+  /* background-color: rgba(0,0,0,0.8); */
+/* } */
+
+
+/* .text { */
+  /* color: #f2f2f2; */
+  /* font-size: 35px; */
+  /* padding: 8px 12px; */
+  /* position: absolute; */
+  /* bottom: 8px; */
+  /* width: 88%; */
+  /* text-align: center; */
+	/* top:70%; */
+	
+/* } */
+
+
+/* @-webkit-keyframes fade { */
+  /* from {opacity: .4} */
+   /* to {opacity: 1} */
+ /* } */
+
+/* @keyframes fade { */
+   /* from {opacity: .4} */
+   /* to {opacity: 1} */
+ /* } */
+
+
+/* } */
+	
+	
+	
+	
+/**Extra grande***/	/**Extra grande***/	/**Extra grande***/	
+	
+
+/**grande**//**grande**//**grande**/
+/**pequeno*****/ /**pequeno*****/ /**pequeno*****/ /**pequeno***portrait**/
+/* @media(min-width:320px) and (max-width: 768px)and (orientation:portrait){ */
+
+
+/* * {box-sizing:border-box} */
+
+/* .slideshow-container { */
+	/* width:100%; */
+	/* /* margin:6px; */
+  /* /* position:relative; */ 
+
+/* } */
+
+
+/* .mySlides { */
+  /* display: none; */
+/* } */
+
+/* .img-slide{ */
+	/* width:100%; */
+	
+/* } */
+
+/* /* Next & previous buttons */ 
+/* .prev, .next { */
+  /* cursor: pointer; */
+  /* position: absolute; */
+  /* top: 50%; */
+  /* width: auto; */
+  /* margin-top: -22px; */
+  /* padding: 16px; */
+  /* color: white; */
+  /* font-weight: bold; */
+  /* font-size: 18px; */
+  /* transition: 0.6s ease; */
+  /* border-radius: 0 3px 3px 0; */
+  /* user-select: none; */
+  /* /* background:red; */
+/* } */
+
+/* /* Position the "next button" to the right */ 
+/* .next { */
+	
+  /* right:0; */
+  /* margin-right:15px; */
+  /* /* border-radius: 3px 0 0 3px; */ 
+/* } */
+
+/* .prev{ */
+
+	/* left:0; */
+	/* margin-left:15px; */
+	  /* /* border-radius: 0 3px 3px 0; */ 
+	
+/* } */
+
+/* /* On hover, add a black background color with a little bit see-through */ 
+/* .prev:hover, .next:hover { */
+  /* background-color: rgba(0,0,0,0.8); */
+/* } */
+
+/* /* Caption text */ 
+/* .text { */
+  /* color: #f2f2f2; */
+  /* font-size: 35px; */
+  /* padding: 8px 14px; */
+  /* position: absolute; */
+  /* /* bottom: 8px; */ 
+  /* width: 100%; */
+  /* text-align: center; */
+	/* top:60%; */
+	/* /* background:red; */ 
+	
+/* } */
+
+
+/* @-webkit-keyframes fade { */
+  /* from {opacity: .4} */
+  /* to {opacity: 1} */
+/* } */
+
+/* @keyframes fade { */
+  /* from {opacity: .4} */
+  /* to {opacity: 1} */
+/* } */
+
+
+
+
+/* } */
+/*pequeno*/ /*pequeno*/ /*pequeno*/ /*pequeno*/ /*pequeno***portrait*/ 
+/*pequeno*/ /*pequeno*/ /*pequeno*/ /*pequeno*/ /*pequeno***landscape*/
+
+/* @media(min-width:320px) and (max-width: 768px)and (orientation:landscape){ */
+
+
+/* * {box-sizing:border-box} */
+
+/* .slideshow-container { */
+	/* width:100%; */
+	/* height:250px; */
+/* } */
+
+/* .mySlides { */
+  /* display: none; */
+/* } */
+
+/* .img-slide{ */
+	/* width:100%; */
+/* } */
+
+/* /* Next & previous buttons */ 
+/* .prev, .next { */
+  /* cursor: pointer; */
+  /* position: absolute; */
+  /* top: 100%; */
+  /* width: auto; */
+  /* margin-top: -22px; */
+  /* padding: 16px; */
+  /* color: white; */
+  /* font-weight: bold; */
+  /* font-size: 18px; */
+  /* transition: 0.6s ease; */
+  /* border-radius: 0 3px 3px 0; */
+  /* user-select: none; */
+  /* /* background:red; */ 
+/* } */
+
+/* /* Position the "next button" to the right */ 
+/* .next { */
+	
+  /* right:0; */
+  /* margin-right:15px; */
+  /* /* border-radius: 3px 0 0 3px; */ 
+/* } */
+
+/* .prev{ */
+
+	/* left:0; */
+	/* margin-left:15px; */
+	  /* /* border-radius: 0 3px 3px 0; */ 
+	
+/* } */
+
+/* /* On hover, add a black background color with a little bit see-through */ 
+/* .prev:hover, .next:hover { */
+  /* background-color: rgba(0,0,0,0.8); */
+/* } */
+
+/* /* Caption text */ 
+/* .text { */
+  /* color: #f2f2f2; */
+  /* font-size: 35px; */
+  /* padding: 8px 14px; */
+  /* position: absolute; */
+  /* /* bottom: 8px; */ 
+  /* width: 100%; */
+  /* text-align: center; */
+	/* top:110%; */
+	/* /* background:red; */ 
+	
+/* } */
+
+
+/* @-webkit-keyframes fade { */
+  /* from {opacity: .4} */
+  /* to {opacity: 1} */
+/* } */
+
+/* @keyframes fade { */
+  /* from {opacity: .4} */
+  /* to {opacity: 1} */
+/* } */
+
+
+
+/* }  */
+/*pequeno*/ /*pequeno*/ /*pequeno*/ /*pequeno*/ /*pequeno***landscape*/ 
+
+
+
+
