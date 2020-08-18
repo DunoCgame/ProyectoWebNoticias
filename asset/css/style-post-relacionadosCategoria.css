@@ -1,0 +1,34 @@
+. rel_posts {
+  borde superior : 1 px punteado en gris;
+  padding-top : 20 px ;
+}
+. rel_posts : after {
+  contenido : "" ;
+  pantalla : bloque;
+  margen inferior : 10 px ;
+  fondo acolchado : 10 px ;
+  claro : ambos;
+}
+. rel_posts  ul {
+  ancho : 100 % ;
+}
+. rel_posts  ul  li {
+  estilo de lista : ninguno;
+  ancho : 20 % ;
+  flotar : izquierda;
+  margen izquierdo : 20 px ;
+}
+. rel_posts  ul  li . title_rel {
+  pantalla : bloque;
+  relleno : 4 px ;
+}
+@media  solo pantalla y ( ancho máximo : 600 px ) {
+  . rel_posts  ul  li {
+    ancho : 40 % ;
+    margen izquierdo : 15 px ;
+    margen inferior : 15 px ;
+  }
+  . rel_posts  ul  li : nth-child ( impar ) {
+    claro : ambos;
+  }
+}

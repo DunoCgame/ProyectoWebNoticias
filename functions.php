@@ -6,69 +6,88 @@ if ( ! function_exists( 'setup' ) ) :
 
 function setup() {
 
-	load_theme_textdomain( 'CoreWeb' );
+load_theme_textdomain( 'CoreWeb' );
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
+add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for custom logo.
-	 *
-	 *  @since Twenty Sixteen 1.2
-	 */
+add_theme_support( 'post-thumbnails');
+
+add_image_size( 'list_articles_thumbs', 550, 370, true );
+
+/* Custom contenido */
+add_theme_support('starter-content');
+
+add_theme_support( 'customize-selective-refresh-widgets' );
+
+add_theme_support( 'shorten_text' );
+
+/* Custom header */
+add_theme_support('custom-header-uploads');
+
+/* Post Thumbnails */
+add_theme_support('post-thumbnails');
+
+/* Custom Post */
+add_theme_support( 'post-formats');
+
+/* Custom Background */
+add_theme_support( 'custom-background' );
+
+#Soportes se imagenes
+// add_theme_support( 'post-thumbnails');
+// add_image_size( 'slider_thumbs', 470, 300, true );
+// add_image_size( 'list_articles_thumbs', 450, 370, true );
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 1200, 9999 );
+	
 	add_theme_support( 'custom-logo', array(
 		'height'      => 240,
 		'width'       => 240,
 		'flex-height' => true,
 	) );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 1200, 9999 );
 
-	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'menu' => __( 'menu', 'CoreWeb' ),
 		'social'  => __( 'Social', 'CoreWeb' ),
 		'menu2'  => __( 'menusidebar', 'CoreWeb' ),
 	) );
+	
 
 #add .active class to link menu item
 add_filter('nav_menu_link_attributes', 'clasemenu',10,30);
 
 
+#logo
+add_theme_support( 'custom-logo', array(
+    'height'      => 100,
+    'width'       => 400,
+    'flex-height' => true,
+    'flex-width'  => true,
+    'header-text' => array( 'tema', 'site-description' ),
+) );
+
+
+#formatos de publicaciion
+ add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
+
+
+#Agrega class a los elementos a
 function clasemenu($atts,$item,$args){
 	$class='link ';
 	$atts['class'] = $class;
 	return $atts;
 }
 
-#add .active class to active menu item
-// add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-// function special_nav_class($classes, $item){
-     // if( in_array('current-menu-item', $classes) ){
-             // $classes['class'] = 'active ';
-     // }
-     // return $classes;
-// }
 
-
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
 	add_theme_support( 'html5', array(
 		'search-form',
 		'comment-form',
@@ -77,11 +96,7 @@ function clasemenu($atts,$item,$args){
 		'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 *
-	 * See: https://codex.wordpress.org/Post_Formats
-	 */
+	
 	add_theme_support( 'post-formats', array(
 		'aside',
 		'image',
@@ -94,39 +109,62 @@ function clasemenu($atts,$item,$args){
 		'chat',
 	) );
 
-	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
-	 */
+
 	add_editor_style( array( 'css/editor-style.css', CoreWeb_fonts_url() ) );
 
-	// Indicate widget sidebars can use selective refresh in the Customizer.
+	
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
-endif; // CoreWeb_setup
+endif;
+
 add_action( 'after_setup_theme', 'setup' );
 
-/**
- * Sets the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- *
- * @since Twenty Sixteen 1.0
- */
+
+
+
+
 function CoreWeb_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'CoreWeb_content_width', 840 );
 }
 add_action( 'after_setup_theme', 'CoreWeb_content_width', 0 );
 
-/**
- * Registers a widget area.
- *
- * @link https://developer.wordpress.org/reference/functions/register_sidebar/
- *
- * @since Twenty Sixteen 1.0
- */
+
+
+function wp_trim_all_excerpt($text) {
+	global $post;
+	   $raw_excerpt = $text;
+	   if ( '' == $text ) {
+		  $text = get_the_content('');
+		  $text = strip_shortcodes( $text );
+		  $text = apply_filters('the_content', $text);
+		  $text = str_replace(']]>', ']]&gt;', $text);
+	   }
+ 
+	$text = strip_tags($text);
+	$excerpt_length = apply_filters('excerpt_length', 30);
+	$excerpt_more = apply_filters('excerpt_more', ' ' . ' [...]');
+	$text = wp_trim_words( $text, $excerpt_length, $excerpt_more ); 
+	 
+	return apply_filters('wp_trim_excerpt', $text, $raw_excerpt); 
+}
+ 
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+add_filter('get_the_excerpt', 'wp_trim_all_excerpt');
+
+
+ #agrear funcion de leer mas
+ 
+ function resumen_con_leer_mas() {
+       global $post;
+       return '<a href="'. get_permalink($post->ID) . '"> Leer más...</a>';
+}
+add_filter('excerpt_more', 'resumen_con_leer_mas');
+ 
+
+
+
+
+ 
  
 function Header_widgets_init(){
 	  	  
@@ -190,32 +228,24 @@ add_action( 'widgets_init', 'CoreWeb_widgets_init' );
 
 
 
+
 if ( ! function_exists( 'CoreWeb_fonts_url' ) ) :
-/**
- * Register Google fonts for Twenty Sixteen.
- *
- * Create your own CoreWeb_fonts_url() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- *
- * @return string Google fonts URL for the theme.
- */
+
 function CoreWeb_fonts_url() {
 	$fonts_url = '';
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
 
-	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
+	
 	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'CoreWeb' ) ) {
 		$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
 	}
 
-	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
 	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'CoreWeb' ) ) {
 		$fonts[] = 'Montserrat:400,700';
 	}
 
-	/* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
+	
 	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'CoreWeb' ) ) {
 		$fonts[] = 'Inconsolata:400';
 	}
@@ -231,23 +261,15 @@ function CoreWeb_fonts_url() {
 }
 endif;
 
-/**
- * Handles JavaScript detection.
- *
- * Adds a `js` class to the root `<html>` element when JavaScript is detected.
- *
- * @since Twenty Sixteen 1.0
- */
+
+ 
 function CoreWeb_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
 add_action( 'wp_head', 'CoreWeb_javascript_detection', 0 );
 
-/**
- * Enqueues scripts and styles.
- *
- * @since Twenty Sixteen 1.0
- */
+
+
 function CoreWeb_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'CoreWeb-fonts', CoreWeb_fonts_url(), array(), null );
@@ -297,11 +319,12 @@ function CoreWeb_scripts() {
 	wp_register_style('BusquedaStyle', get_template_directory_uri() . '/asset/css/style-Busqueda.css' );
 	$dependencies = array('BusquedaStyle');
 	wp_enqueue_style( 'BusquedaStyle', get_stylesheet_uri() );
+	
 
-
-
-
-
+	wp_register_style('Post_relacionados_Categoria_Style', get_template_directory_uri() . '/asset/css/style-post-relacionadosCategoria.css' );
+	$dependencies = array('Post_relacionados_Categoria_Style');
+	wp_enqueue_style( 'Post_relacionados_Categoria_Style', get_stylesheet_uri() );
+	
 
 // $dependencies1 = array('jquery');
 // wp_enqueue_script('jquery', get_template_directory_uri().'/jquery/jquery-3.3.1.min.js', $dependencies1, '', true );	
@@ -313,25 +336,12 @@ function CoreWeb_scripts() {
 // $dependencies2 = array('Scroollefect');
 // wp_enqueue_script('Scroollefect', get_template_directory_uri().'asset/js/Scroollefect.js', $dependencies2, '', true );	
 	
-
-
-
-
-
-
-
-
 }
 add_action( 'wp_enqueue_scripts', 'CoreWeb_scripts' );
 
-/**
- * Adds custom classes to the array of body classes.
- *
- * @since Twenty Sixteen 1.0
- *
- * @param array $classes Classes for the body element.
- * @return array (Maybe) filtered body classes.
- */
+
+
+
 function CoreWeb_body_classes( $classes ) {
 	// Adds a class of custom-background-image to sites with a custom background image.
 	if ( get_background_image() ) {
@@ -357,15 +367,8 @@ function CoreWeb_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'CoreWeb_body_classes' );
 
-/**
- * Converts a HEX value to RGB.
- *
- * @since Twenty Sixteen 1.0
- *
- * @param string $color The original color, in 3- or 6-digit hexadecimal form.
- * @return array Array containing RGB (red, green, and blue) values for the given
- *               HEX code, empty array otherwise.
- */
+
+
 function CoreWeb_hex2rgb( $color ) {
 	$color = trim( $color, '#' );
 
@@ -388,11 +391,12 @@ function CoreWeb_hex2rgb( $color ) {
  * Custom template tags for this theme.
  */
 
- require get_template_directory() . '/inc/template-tags.php';
+ require get_template_directory() .'/inc/template-tags.php';
 
 /**
  * Customizer additions.
- */require get_template_directory() . '/inc/customizer.php';
+ */require get_template_directory() .'/inc/customizer.php';
+
 
  function CoreWeb_content_image_sizes_attr( $sizes, $size ) {
 	$width = $size[0];
@@ -410,17 +414,11 @@ function CoreWeb_hex2rgb( $color ) {
 }
 add_filter( 'wp_calculate_image_sizes', 'CoreWeb_content_image_sizes_attr', 10 , 2 );
 
-/**
- * Add custom image sizes attribute to enhance responsive image functionality
- * for post thumbnails
- *
- * @since Twenty Sixteen 1.0
- *
- * @param array $attr Attributes for the image markup.
- * @param int   $attachment Image attachment ID.
- * @param array $size Registered image size or flat array of height and width dimensions.
- * @return string A source size value for use in a post thumbnail 'sizes' attribute.
- */
+
+
+
+
+
 function CoreWeb_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	if ( 'post-thumbnail' === $size ) {
 		is_active_sidebar( 'sidebar-1' ) && $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 60vw, (max-width: 1362px) 62vw, 840px';
@@ -430,14 +428,11 @@ function CoreWeb_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 }
 add_filter( 'wp_get_attachment_image_attributes', 'CoreWeb_post_thumbnail_sizes_attr', 10 , 3 );
 
-/**
- * Modifies tag cloud widget arguments to have all tags in the widget same font size.
- *
- * @since Twenty Sixteen 1.1
- *
- * @param array $args Arguments for tag cloud widget.
- * @return array A new modified arguments.
- */
+
+
+
+
+
 function CoreWeb_widget_tag_cloud_args( $args ) {
 	$args['largest'] = 1;
 	$args['smallest'] = 1;
@@ -447,6 +442,144 @@ function CoreWeb_widget_tag_cloud_args( $args ) {
 add_filter( 'widget_tag_cloud_args', 'CoreWeb_widget_tag_cloud_args' );
 
 
+
+
+
+
+#anclaje de previo y next PAGINACION SIMPLE
+
+
+#paginacion avansada
+function pagination($pages = '', $range = 2){
+     $showitems = ($range * 2)+1;  
+ 
+     global $paged;
+     if(empty($paged)) $paged = 1;
+ 
+     if($pages == '')
+     {
+         global $wp_query;
+         $pages = $wp_query->max_num_pages;
+         if(!$pages)
+         {
+             $pages = 1;
+         }
+     }   
+ 
+     if(1 != $pages)
+     {
+         echo "<div class='pagination justify-content-center'>";
+		 previous_posts_link('<<< previous');
+		 
+		 
+         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo;</a>";
+         if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a>";
+          for ($i=1; $i <= $pages; $i++)
+         {
+             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+             {
+
+                 echo ($paged == $i)? "<span class='current'>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
+             }
+         }
+ 
+         if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";  
+         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
+next_posts_link('next >>>');
+		 
+		 echo "</div>\n";
+     }
+}
+
+
+function related_after_content( $content ){
+    
+    if ( !is_singular('post') ) return $content;	
+	
+	$cad			= "";
+	$template_li 	= '<li>
+							<a class="thumb_rel" href="{url}">{thumb}</a>
+							<a class="title_rel" href="{url}">{title}</a>
+						</li>';
+	$template_rel	= '<div class="rel_posts">
+							<h3>Artículos Relacionados</h3>
+							<ul>
+								{list}
+							</ul>
+					   </div>';
+
+    $terms = get_the_terms( get_the_ID(), 'category');
+    $categ = array();
+    
+    if ( $terms )
+    {
+    	foreach ($terms as $term) 
+    	{
+    		$categ[] = $term->term_id;
+    	}
+    }
+    else{
+    	return $content;
+    }
+
+    $loop	= new WP_QUERY(array(
+    				'category__in'		=> $categ,
+    				'posts_per_page'	=> 4,
+    				'post__not_in'		=>array(get_the_ID()),
+    				'orderby'			=>'rand'
+    				));
+
+    if ( $loop->have_posts() )
+    {
+
+    	while ( $loop->have_posts() )
+    	{
+    		$loop->the_post();
+
+    		$search	 = Array('{url}','{thumb}','{title}');
+	  		$replace = Array(get_permalink(),get_the_post_thumbnail(),get_the_title());
+    	
+    		$cad .= str_replace($search,$replace, $template_li);
+    	}
+
+    	if ( $cad ) 
+    	{
+		  	$content .= str_replace('{list}', $cad, $template_rel);
+    	}
+
+    }
+   	wp_reset_query();
+
+    return $content;
+}
+
+add_filter( 'the_content', 'related_after_content'); 	
+
+
+
+#Agregar puntos al final del extracto
+function custom_excerpt_more($more) {
+    return '........';
+}
+add_filter('excerpt_more', 'custom_excerpt_more');
+
+
+
+
+
+
+
+
+#Eliminar basura del área head
+	// remove_action('wp_head', 'rsd_link');
+	// remove_action('wp_head', 'wp_generator');
+	// remove_action('wp_head', 'feed_links', 2);
+	// remove_action('wp_head', 'index_rel_link');
+	// remove_action('wp_head', 'wlwmanifest_link');
+	// remove_action('wp_head', 'feed_links_extra', 3);
+	// remove_action('wp_head', 'start_post_rel_link', 10, 0);
+	// remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+	// remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 
 
@@ -462,5 +595,21 @@ add_filter( 'widget_tag_cloud_args', 'CoreWeb_widget_tag_cloud_args' );
 
 
 
+?>
 
 
+<?php
+
+function my_login_logo() { ?>
+    <style type="text/css">
+        .login h1 a {
+            width: auto !important;
+            background-image: url("<?php echo get_stylesheet_directory_uri();?>/images/logo.png") !important;
+            background-size: auto !important;
+        }
+    </style>
+<?php 
+}
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+?>

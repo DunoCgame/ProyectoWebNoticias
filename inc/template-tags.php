@@ -1,4 +1,22 @@
 <?php
+/**
+ * Custom CoreWeb template tags
+ *
+ * Eventually, some of the functionality here could be replaced by core features.
+
+ 
+ ok active
+// CoreWeb_entry_meta();
+// CoreWeb_entry_date();
+// CoreWeb_entry_taxonomies();
+// CoreWeb_post_thumbnail();
+
+//call in theme child
+// CoreWeb_excerpt();*
+// CoreWeb_excerpt_more();*
+// CoreWeb_categorized_blog();*						
+// CoreWeb_category_transient_flusher();*
+ */
 
 if ( ! function_exists( 'CoreWeb_entry_meta' ) ) :
 /**
@@ -6,9 +24,10 @@ if ( ! function_exists( 'CoreWeb_entry_meta' ) ) :
  *
  * Create your own CoreWeb_entry_meta() function to override in a child theme.
  *
- * @since Twenty Sixteen 1.0
+ * @since CoreWeb 1.0
  */
 function CoreWeb_entry_meta() {
+	
 	if ( 'post' === get_post_type() ) {
 		$author_avatar_size = apply_filters( 'CoreWeb_author_avatar_size', 49 );
 		printf( '<span class="byline"><span class="author vcard">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n" href="%3$s">%4$s</a></span></span>',
@@ -41,7 +60,8 @@ function CoreWeb_entry_meta() {
 		comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'CoreWeb' ), get_the_title() ) );
 		echo '</span>';
 	}
-}
+}///
+
 endif;
 
 if ( ! function_exists( 'CoreWeb_entry_date' ) ) :
@@ -50,7 +70,7 @@ if ( ! function_exists( 'CoreWeb_entry_date' ) ) :
  *
  * Create your own CoreWeb_entry_date() function to override in a child theme.
  *
- * @since Twenty Sixteen 1.0
+ * @since CoreWeb 1.0
  */
 function CoreWeb_entry_date() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -80,7 +100,7 @@ if ( ! function_exists( 'CoreWeb_entry_taxonomies' ) ) :
  *
  * Create your own CoreWeb_entry_taxonomies() function to override in a child theme.
  *
- * @since Twenty Sixteen 1.0
+ * @since CoreWeb 1.0
  */
 function CoreWeb_entry_taxonomies() {
 	$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'CoreWeb' ) );
@@ -110,7 +130,7 @@ if ( ! function_exists( 'CoreWeb_post_thumbnail' ) ) :
  *
  * Create your own CoreWeb_post_thumbnail() function to override in a child theme.
  *
- * @since Twenty Sixteen 1.0
+ * @since CoreWeb 1.0
  */
 function CoreWeb_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
@@ -132,6 +152,7 @@ function CoreWeb_post_thumbnail() {
 
 	<?php endif; // End is_singular()
 }
+
 endif;
 
 if ( ! function_exists( 'CoreWeb_excerpt' ) ) :
@@ -142,7 +163,7 @@ if ( ! function_exists( 'CoreWeb_excerpt' ) ) :
 	 *
 	 * Create your own CoreWeb_excerpt() function to override in a child theme.
 	 *
-	 * @since Twenty Sixteen 1.0
+	 * @since CoreWeb 1.0
 	 *
 	 * @param string $class Optional. Class string of the div element. Defaults to 'entry-summary'.
 	 */
@@ -164,7 +185,7 @@ if ( ! function_exists( 'CoreWeb_excerpt_more' ) && ! is_admin() ) :
  *
  * Create your own CoreWeb_excerpt_more() function to override in a child theme.
  *
- * @since Twenty Sixteen 1.0
+ * @since CoreWeb 1.0
  *
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
@@ -177,6 +198,7 @@ function CoreWeb_excerpt_more() {
 	return ' &hellip; ' . $link;
 }
 add_filter( 'excerpt_more', 'CoreWeb_excerpt_more' );
+
 endif;
 
 if ( ! function_exists( 'CoreWeb_categorized_blog' ) ) :
@@ -185,11 +207,11 @@ if ( ! function_exists( 'CoreWeb_categorized_blog' ) ) :
  *
  * Create your own CoreWeb_categorized_blog() function to override in a child theme.
  *
- * @since Twenty Sixteen 1.0
+ * @since CoreWeb 1.0
  *
  * @return bool True if there is more than one category, false otherwise.
  */
-function CoreWeb_categorized_blog() {
+function CoreWeb_categorized_blog(){
 	if ( false === ( $all_the_cool_cats = get_transient( 'CoreWeb_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
@@ -212,12 +234,13 @@ function CoreWeb_categorized_blog() {
 		return false;
 	}
 }
+
 endif;
 
 /**
  * Flushes out the transients used in CoreWeb_categorized_blog().
  *
- * @since Twenty Sixteen 1.0
+ * @since CoreWeb 1.0
  */
 function CoreWeb_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
@@ -235,7 +258,7 @@ if ( ! function_exists( 'CoreWeb_the_custom_logo' ) ) :
  *
  * Does nothing if the custom logo is not available.
  *
- * @since Twenty Sixteen 1.2
+ * @since CoreWeb 1.2
  */
 function CoreWeb_the_custom_logo() {
 	if ( function_exists( 'the_custom_logo' ) ) {

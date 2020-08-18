@@ -1,5 +1,5 @@
 
-	<?php query_posts('category_name=Opiniones&posts_per_page=10' );	?>
+	<?php query_posts('category_name=Politica&posts_per_page=10' );	?>
 	
 	<?php 
 	
@@ -21,10 +21,11 @@
 			</figure>
 			
 			<p class="text_articulo">
-				<?php the_excerpt()	#extracto texto;?>
+				<?php  $content = get_the_content(); echo mb_strimwidth($content, 0, 190, '...'); ?>
 			</p>
 		
-	</article>	
+		<div class="date"><?php the_date();?> en <span class="category"><?php the_category();?></span></div>
+</article>	
 	
 		<?php 
 			endwhile;

@@ -29,11 +29,7 @@
 	
 <div class="Social-buscador">
 	
-	<!--Aside php-->
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	<!--Aside php	-->
-				
-		
+
 		<div class="ContainerSocial">
 
 			<ul class="MenuSocial" >
@@ -61,6 +57,10 @@
 			</ul>
 
 		</div>
+		
+		<!--Aside php-->
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<!--Aside php	-->
 
 </div>
 		</aside>

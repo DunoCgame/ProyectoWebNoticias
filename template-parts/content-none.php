@@ -1,17 +1,9 @@
-<?php
-/**
- * The template part for displaying a message that posts cannot be found
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
- */
-?>
+<?php #query_posts("paged=$paged");	?>
 
 <section class="no-results not-found">
 	<header class="page-header">
 		<h1 class="page-title"><?php _e( 'Nothing Found', 'CoreWeb' ); ?></h1>
-	</header><!-- .page-header -->
+	</header>
 
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
@@ -21,13 +13,19 @@
 		<?php elseif ( is_search() ) : ?>
 
 			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'CoreWeb' ); ?></p>
-			<?php get_search_form(); ?>
+			<?php #get_search_form(); ?>
 
 		<?php else : ?>
 
 			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'CoreWeb' ); ?></p>
-			<?php get_search_form(); ?>
+			<?php #get_search_form(); ?>
 
 		<?php endif; ?>
-	</div><!-- .page-content -->
-</section><!-- .no-results -->
+	</div>
+</section>
+<script>
+
+document.getElementById("marquee").style.display="none";
+
+
+</script>

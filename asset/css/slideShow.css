@@ -4,7 +4,7 @@
 * {box-sizing:border-box}
 
 .slideshow-container {
-	width:60%;
+	width:50%;
 	/* margin:6px 6px 0px 6px; */
 	
   position: relative;
@@ -15,12 +15,14 @@
 
 .mySlides {
   display: none;
+  
 }
 
 .mySlides>img{
 	width:100%;
+	/* height:100%; */
 	height:320px;
-	
+	object-fit: fill;
 }
 
 /* Next & previous buttons */

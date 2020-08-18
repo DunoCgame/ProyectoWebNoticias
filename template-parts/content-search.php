@@ -11,3 +11,9 @@
 	
 </article><!-- #post-## -->
 
+<script>
+
+	document.getElementById("marquee").style.display="none";
+
+
+</script>

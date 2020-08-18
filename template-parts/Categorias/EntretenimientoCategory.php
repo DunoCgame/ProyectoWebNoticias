@@ -1,5 +1,5 @@
 
-	<?php query_posts('category_name=Opiniones&posts_per_page=10' );	?>
+	<?php query_posts('category_name=Entretenimiento&posts_per_page=10' );	?>
 	
 	<?php 
 	
@@ -21,7 +21,7 @@
 			</figure>
 			
 			<p class="text_articulo">
-				<?php the_excerpt()	#extracto texto;?>
+				<?php  $content = get_the_content(); echo mb_strimwidth($content, 0, 190, '...'); ?>
 			</p>
 		
 	</article>	

@@ -1,5 +1,5 @@
 
-	<?php query_posts('category_name=Opiniones&posts_per_page=10' );	?>
+	<?php query_posts('category_name=Internacionales&posts_per_page=10' );	?>
 	
 	<?php 
 	
@@ -16,12 +16,12 @@
 			
 			<figure class="conainer-img">
 				<a href="<?php the_permalink();?>">
-						<?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'list_articles_thumbs' ); } ?>
+						<?php CoreWeb_post_thumbnail(); ?>
 				</a>	
 			</figure>
 			
-			<p class="text_articulo">
-				<?php the_excerpt()	#extracto texto;?>
+		<p class="text_articulo">
+				<?php  $content = get_the_content(); echo mb_strimwidth($content, 0, 190, '...'); ?>
 			</p>
 		
 	</article>	

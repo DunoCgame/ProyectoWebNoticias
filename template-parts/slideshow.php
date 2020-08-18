@@ -1,29 +1,24 @@
 <!--sildeShow-->
 			<div class="slideshow-container">
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+			
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				
-				<div class="mySlides fade">
-				  
-				  
-				  	
-					<?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'list_articles_thumbs' ); } ?>
+	<div class="mySlides fade">
+					  
+					  
+						
+		<?php CoreWeb_post_thumbnail(); ?>
+				
+				
 			
 			
-		
-		
-	<hgroup class="group-titulos text">
-				<h2 class="titulo">
-					<a class="link" href="<?php the_permalink();?>"><?php the_title(); ?></a>
-				</h2>
-			</hgroup>
-			
-				</div>
-
-			
-			
-			
-			
-			
+		<hgroup class="group-titulos text">
+			<h2 class="titulo">
+				<a class="link" href="<?php the_permalink();?>"><?php the_title(); ?></a>
+			</h2>
+		</hgroup>
+				
+	</div>
 			
 		<?php endwhile; else: ?>
 				<h1>No se encontraron articulos</h1>
