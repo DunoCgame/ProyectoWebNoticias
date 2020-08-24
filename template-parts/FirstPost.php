@@ -18,7 +18,21 @@
 						</h2>
 					</hgroup>
 				
-						<?php  CoreWeb_entry_date(); 	?>
+						<?php 
+
+							$excerpt = get_the_excerpt();
+							 
+							$excerpt = substr($excerpt, 0, 40);
+							$result = substr($excerpt, 0, strrpos($excerpt, ' '));
+							echo $result;
+
+							the_Category();
+
+							?>
+						
+						
+						
+						
 						<br>
 						<?php  CoreWeb_entry_taxonomies();	?>
 				

@@ -50,10 +50,19 @@ set_post_thumbnail_size( 1200, 9999 );
 
 
 	register_nav_menus( array(
-		'menu' => __( 'menu', 'CoreWeb' ),
-		'social'  => __( 'Social', 'CoreWeb' ),
-		'menu2'  => __( 'menusidebar', 'CoreWeb' ),
+		'menu1' => __( 'menu1', 'CoreWeb' ),
+		'menu2' => __( 'menu2', 'CoreWeb' ),
+		'menu3' => __( 'menu3', 'CoreWeb' ),
+		'social'=> __( 'Social', 'CoreWeb' ),
 	) );
+	
+	
+	
+	// register_nav_menus( array(
+			// 'header-menu' => 'Header Menu',
+			// 'footer-menu' => 'Footer Menu'
+			// ));
+	
 	
 
 #add .active class to link menu item
@@ -336,6 +345,8 @@ function CoreWeb_scripts() {
 // $dependencies2 = array('Scroollefect');
 // wp_enqueue_script('Scroollefect', get_template_directory_uri().'asset/js/Scroollefect.js', $dependencies2, '', true );	
 	
+	
+	
 }
 add_action( 'wp_enqueue_scripts', 'CoreWeb_scripts' );
 
@@ -415,10 +426,6 @@ function CoreWeb_hex2rgb( $color ) {
 add_filter( 'wp_calculate_image_sizes', 'CoreWeb_content_image_sizes_attr', 10 , 2 );
 
 
-
-
-
-
 function CoreWeb_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	if ( 'post-thumbnail' === $size ) {
 		is_active_sidebar( 'sidebar-1' ) && $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 60vw, (max-width: 1362px) 62vw, 840px';
@@ -427,10 +434,6 @@ function CoreWeb_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes', 'CoreWeb_post_thumbnail_sizes_attr', 10 , 3 );
-
-
-
-
 
 
 function CoreWeb_widget_tag_cloud_args( $args ) {
@@ -469,7 +472,7 @@ function pagination($pages = '', $range = 2){
      if(1 != $pages)
      {
          echo "<div class='pagination justify-content-center'>";
-		 previous_posts_link('<<< previous');
+		 previous_posts_link('< previous');
 		 
 		 
          if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo;</a>";
@@ -485,7 +488,7 @@ function pagination($pages = '', $range = 2){
  
          if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";  
          if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
-next_posts_link('next >>>');
+next_posts_link('next >');
 		 
 		 echo "</div>\n";
      }
@@ -501,6 +504,7 @@ function related_after_content( $content ){
 							<a class="thumb_rel" href="{url}">{thumb}</a>
 							<a class="title_rel" href="{url}">{title}</a>
 						</li>';
+						
 	$template_rel	= '<div class="rel_posts">
 							<h3>Artículos Relacionados</h3>
 							<ul>
@@ -511,10 +515,8 @@ function related_after_content( $content ){
     $terms = get_the_terms( get_the_ID(), 'category');
     $categ = array();
     
-    if ( $terms )
-    {
-    	foreach ($terms as $term) 
-    	{
+    if ( $terms ){
+    	foreach ($terms as $term){
     		$categ[] = $term->term_id;
     	}
     }
@@ -522,18 +524,16 @@ function related_after_content( $content ){
     	return $content;
     }
 
-    $loop	= new WP_QUERY(array(
+    $loop = new WP_QUERY(array(
     				'category__in'		=> $categ,
     				'posts_per_page'	=> 4,
     				'post__not_in'		=>array(get_the_ID()),
     				'orderby'			=>'rand'
     				));
 
-    if ( $loop->have_posts() )
-    {
+    if ($loop->have_posts()){
 
-    	while ( $loop->have_posts() )
-    	{
+    	while ( $loop->have_posts() ){
     		$loop->the_post();
 
     		$search	 = Array('{url}','{thumb}','{title}');
@@ -542,8 +542,7 @@ function related_after_content( $content ){
     		$cad .= str_replace($search,$replace, $template_li);
     	}
 
-    	if ( $cad ) 
-    	{
+    	if ( $cad ){
 		  	$content .= str_replace('{list}', $cad, $template_rel);
     	}
 
@@ -553,21 +552,16 @@ function related_after_content( $content ){
     return $content;
 }
 
-add_filter( 'the_content', 'related_after_content'); 	
+// add_filter( 'the_content', 'related_after_content'); 	
+
 
 
 
 #Agregar puntos al final del extracto
-function custom_excerpt_more($more) {
-    return '........';
-}
-add_filter('excerpt_more', 'custom_excerpt_more');
-
-
-
-
-
-
+// function custom_excerpt_more($more) {
+    // return '........';
+// }
+// add_filter('excerpt_more', 'custom_excerpt_more');
 
 
 #Eliminar basura del área head
@@ -595,21 +589,22 @@ add_filter('excerpt_more', 'custom_excerpt_more');
 
 
 
+
+function mi_logo_personalizado() {
+    echo '
+<style type="text/css">
+	.login h1 a {
+		background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/login-logo.png);
+	}
+</style>';
+}
+add_action( 'login_enqueue_scripts', 'mi_logo_personalizado' );
+
+
 ?>
 
 
 <?php
 
-function my_login_logo() { ?>
-    <style type="text/css">
-        .login h1 a {
-            width: auto !important;
-            background-image: url("<?php echo get_stylesheet_directory_uri();?>/images/logo.png") !important;
-            background-size: auto !important;
-        }
-    </style>
-<?php 
-}
-add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 ?>

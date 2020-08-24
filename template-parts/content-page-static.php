@@ -2,9 +2,10 @@
 	
 
 
-<?php      query_posts("paged=".$paged.'&'.'category_name='.$Cat);	?>
 
-<div class="Articulos-Container">	
+<div class="Articulos-Container page-static">	
+
+<?php query_posts("paged=".$paged.'&'.'category_name='.$Cat);	?>
 
 	<?php 	if ( have_posts() ) : ?> 
 	
@@ -19,17 +20,21 @@
 					</h2>
 				</hgroup>
 				
-				<figure class="conainer-img">
-					<?php CoreWeb_excerpt(); ?>
-		
-					<?php CoreWeb_post_thumbnail(); ?>	
+			<figure class="conainer-img">
+						<?php #CoreWeb_excerpt(); ?>
+				
+						<?php CoreWeb_post_thumbnail(); ?>
+							<?php	 CoreWeb_entry_date(); 			 ?>
 				</figure>
 				
-			
-				<?php	  		CoreWeb_entry_date(); 			 ?>
 				
-				<?php	  			the_excerpt(); 			 ?>
 			
+			
+				<?php	  			the_excerpt(); 			 ?>
+<center>
+<a  class="botonLeermas" href="<?php echo esc_url( get_permalink() );?>">Leer Mas
+</a>
+</center>	
 				<?php	CoreWeb_entry_taxonomies();				?>
 
 		</article>	
@@ -45,7 +50,9 @@
  
 </div>
 	
+	
 <?php  pagination();	?>	
+
  
  <?php wp_reset_query(); ?>
   

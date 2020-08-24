@@ -12,20 +12,20 @@
 
 	<?php CoreWeb_post_thumbnail(); ?>
 
-	<div class="entry-content">
-<?php
+	<div class="entry-content page-content">
+			<?php
 
-	the_content();
+				the_content();
 
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'CoreWeb' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'CoreWeb' ) . ' </span>%',
-				'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
-?>
+						wp_link_pages( array(
+							'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'CoreWeb' ) . '</span>',
+							'after'       => '</div>',
+							'link_before' => '<span>',
+							'link_after'  => '</span>',
+							'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'CoreWeb' ) . ' </span>%',
+							'separator'   => '<span class="screen-reader-text">, </span>',
+						) );
+			?>
 	</div><!-- .entry-content -->
 
 <?php

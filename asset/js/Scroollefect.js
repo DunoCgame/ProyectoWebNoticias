@@ -9,39 +9,29 @@ var FormN = document.getElementById("formNabar");
 function Scroll_Efect() {
   if(screen.width>700 ){
 	  
- if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ) {
+ if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10 ) {
     // modificador
 	Scroll.style.position="fixed";
 	Scroll.style.top=0;
-	Scroll.style.zIndex = "1";
+	Scroll.style.height="60px";
 	
+	
+	Scroll.style.zIndex = "10";	
 	icon.style.display="block";
-	// Menu.style.marginTop="5px";
-	
-	// FormN.style.marginTop="16px";
-	
-	
-	// icon.style.backgroundImage = "url('./asset/img/Logo-s.png')";
-	// icon.style.backgroundRepeat = "no-repeat";
-	// Scroll.style.backgroundPosition = "center left";
-	// icon.style.backgroundSize = "100px 100px";
-	// Scroll.style.borderBottom = "1px solid grey";
 
-	 
 	
   }
   else {
    //eliminacion del modificador
-	 Scroll.style.position = 'relative'; 
-     Scroll.style.top = 100;
+	Scroll.style.position = 'relative'; 
+    Scroll.style.top = 0;
 				 
 	 icon.style.display="none";
+	 	Scroll.style.zIndex = "1";
+Scroll.style.height="50px";		
 	 
-	 // Menu.style.marginTop="2px";
-	 
-	 // FormN.style.marginTop="40px";
-	 
-	 
+
+
   }
   
 

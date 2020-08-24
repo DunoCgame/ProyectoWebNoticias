@@ -1,14 +1,31 @@
-<?php function Post_por_Categoria($Cat){  ?>
+<?php function Post_Relacionados($paged){  
 
-	
-<?php  query_posts('category_name='.$Cat.'&posts_per_page=5' );	  	?>
+
+ // if ( !is_singular('post') ){  
+ 
+ $categories = get_the_category();
+ 
+ echo $categories[0];
+ 
+// if (!empty($categories)) {
+    // foreach ($categories as $category) {
+        // echo esc_html( $category->name );
+    // }
+// }
+ 
+ 
+ query_posts('category_name='.$Cat.'&posts_per_page=4'.'&'.'category_name='.$Cat ); 	
+ 
+ 
+ 
+ ?>
 
 
 	
 	
 	<?php 	if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
-		
+<div class="containner-post-reacionados"> 
 		<article class="article">
 
 				<hgroup class="grupo_title">
@@ -18,7 +35,7 @@
 
 				
 				<figure class="conainer-img">
-						
+						<?php #CoreWeb_excerpt(); ?>
 				
 						<?php CoreWeb_post_thumbnail(); ?>
 							<?php	 CoreWeb_entry_date(); 			 ?>
@@ -26,12 +43,10 @@
 				
 			
 			
+			
 
 			<?php	  		the_excerpt(); 			 ?>
-<center>
-<a  class="botonLeermas" href="<?php echo esc_url( get_permalink() );?>">Leer Mas
-</a>
-</center>
+
 			<?php	CoreWeb_entry_taxonomies();				?>
 
 		</article>	
@@ -52,14 +67,11 @@
 
 	<?php wp_reset_query(); ?>
 	
-	
-
-
+</div>	
 
  
  
- 
- 
- 
+<?php   # } ?>
+
 <?php    } ?>
  

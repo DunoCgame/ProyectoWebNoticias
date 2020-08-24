@@ -21,4 +21,11 @@ function showSlides(n) {
 
   slides[slideIndex-1].style.display = "block";  
 
+	
 }
+
+setInterval(function(){
+			
+			showSlides(slideIndex += 1);
+			
+			},4000);

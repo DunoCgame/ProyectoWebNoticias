@@ -3,29 +3,20 @@
 						<nav class="navar-sidebar">
 		
 		<?php 
-			 wp_nav_menu(
-					array(
-					'container'=>false,
-					'menu_class' => 'navar-item-sidebar1',
-					'menu_id'    => 'Menu_Action',			
-					'link_before'     => '',
-					'link_after'      => '',
-					'items_wrap'=>'<ul  id="%1$s" class="%2$s" >%3$s</ul>',
-					'theme_locaton'=>'menu2',
-
-                 )
-				  );
+		
+					 NavbarSecundario();
+			 
 			?>
 					
-			
+			</nav>
 					
 					<ul class="navar-item-sidebar2">
 						<li class="item"><a href="#" class="link">Anuciate</a></li>
 						<li class="item"><a href="#" class="link">Contacto</a></li>
 					</ul>
+		
 				
-				
-				</nav>	
+			
 	
 <div class="Social-buscador">
 	

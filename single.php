@@ -12,11 +12,7 @@
 	// Include the single post content template.
 			get_template_part( 'template-parts/content', 'single' );
 	?>
-	
-	
-	
-		
-			
+
 	<?php endwhile; else:    ?>
 
 	<article>

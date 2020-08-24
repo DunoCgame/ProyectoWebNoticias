@@ -7,8 +7,6 @@
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/asset/img/favicon.ico">
 	<!--llamada de Stylos-->
 	<title><?php bloginfo( 'name' ); ?></title>
-
-
 <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
@@ -33,7 +31,7 @@
 		
 		<nav class="navbar" id="NavbarScrooll">
 			
-			<img src="asset/img/Logo-s.png" class="icon-scroll" id="iconScroll">
+			<img src="<?php bloginfo('template_url')?>/asset/img/favicon.png" class="icon-scroll" id="iconScroll">
 			
 		
 		<button class="navbar-toggler icon-menu"  onclick="openNav()" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,11 +39,18 @@
 	
 			<div class="navbar-collapse"  id="Menu">
 				<a href="javascript:void(0)" class="closebtn icon-cross" onclick="closeNav()"></a>
-<
+
 		
-		<!---Marquee---->
-		<?php include('template-parts/navbar.php');?>
-		<!---Marquee---->
+		<!---Navbar---->
+		<?php 
+		include('template-parts/navbar.php');
+		
+	NavbarPrincial();
+		
+		?>
+		
+		
+		<!---Navbar----->
 				
 		
 			

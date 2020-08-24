@@ -1,0 +1,115 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+body{
+	background:#d9d9d9;
+}
+.content-area{
+	background:#d9d9d9;
+	
+}
+
+.site-main-404{
+	
+	
+	background:white;
+	height:300px;
+	margin:6px;
+	border:1px solid grey;
+	height:93%;
+	padding:10px;	
+}
+
+.error-404{
+	margin-top:60px;
+	
+}
+
+.text-error-404{
+	font-size:60px;
+	margin-bottom:12px;
+}
+
+
+.page-header{
+	
+	text-align:center;
+	margin-bottom:2px;
+}
+
+.page-content{
+	
+	margin-bottom:10px;
+
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+
+	padding:20px;
+	
+	
+}
+
+.page-content>p{
+	font-size:18px;
+	text-align:center;
+	font-weight:bold;
+	margin-bottom:10px;
+	
+	
+	
+}
+
+/* center> */
+.page-content>.search-form{
+
+/* background:red; */
+
+		list-style:none;
+		display: flex;
+		flex-direction:column;
+		justify-content: center;
+		align-items: center;
+		text-align:center;
+		padding:10px;
+
+
+
+
+	}
+.page-content>.search-form>label>.search-field{
+		
+	border-radius:20px;
+	border:2px solid grey;
+	width:300px;
+	height:35px;
+	margin-bottom:10px;	 
+	text-align:center;
+	
+}
+
+.page-content>.search-form>.search-submit{
+	
+	border-radius:20px;
+	border:2px solid grey;
+	background:#003399;
+	color:white;
+	padding:15px;
+
+}
+
+.bottonVolver{
+	
+	border-radius:20px;
+	border:2px solid grey;
+	background:#003399;
+	color:white;
+	text-decoration:none;
+	
+	padding:10px;
+	
+}
+/******404*********/
