@@ -26,6 +26,6 @@ function showSlides(n) {
 
 setInterval(function(){
 			
-			showSlides(slideIndex += 1);
+			// showSlides(slideIndex += 1);
 			
 			},4000);

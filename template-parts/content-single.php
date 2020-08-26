@@ -95,7 +95,7 @@ while ($query1->have_posts()){
 	<span class="time-container"><?php the_time('M j, Y') ?></span>
 </div>
 
-
+<p class="text-relacionados-post">
 <?php 
 // the_excerpt();
 
@@ -106,6 +106,7 @@ $result = substr($excerpt, 0, strrpos($excerpt, ' '));
 echo $result;
 
 ?>
+</p>
 
 
 <center>

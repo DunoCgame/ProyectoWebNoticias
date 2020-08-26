@@ -23,11 +23,20 @@
 						<?php CoreWeb_post_thumbnail(); ?>
 							<?php	 CoreWeb_entry_date(); 			 ?>
 				</figure>
-				
-			
-			
+				<?php 
 
-			<?php	  		the_excerpt(); 			 ?>
+							$excerpt = get_the_excerpt();
+							 
+							$excerpt = substr($excerpt, 0, 100);
+							$result = substr($excerpt, 0, strrpos($excerpt, ' '));
+							echo $result;
+
+						
+							?>
+			
+			
+			
+			
 <center>
 <a  class="botonLeermas" href="<?php echo esc_url( get_permalink() );?>">Leer Mas
 </a>

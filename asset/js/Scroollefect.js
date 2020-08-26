@@ -12,9 +12,9 @@ function Scroll_Efect() {
  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10 ) {
     // modificador
 	Scroll.style.position="fixed";
-	Scroll.style.top=0;
+	// Scroll.style.top=32;
+	Scroll.style.top=2;
 	Scroll.style.height="60px";
-	
 	
 	Scroll.style.zIndex = "10";	
 	icon.style.display="block";

@@ -1,40 +1,38 @@
-
-<?php wp_head();?>	
-
-
 <?php
-
-if ( is_home() ) :
-
-	get_header();
-	
-elseif ( is_404() ) :
-
- get_header( '404' );
+	/*
+	Template Name:Actualidad
+	*/
  
-endif;
+ ?>
+ 
 
-?>
+<?php wp_head();?>
+
+<?php  get_header(); ?>
+
+
+
 <!-----SECCION__ARTICULOS___CATGORIAS--->
-<?php include("template-parts/Categorias/PostporCategoria.php");?>
 
 	<main class="main">
 	
 	<section class="section-primeraVista" >
 	<!--sildeShow-->
-	<?php include('template-parts/slideshow.php'); ?>
+	
+<?php include('/template-parts/slideshow.php'); ?>
 	
 	<!--sildeShow-->
 	
 	<!---Articulos-previo-->
 	
-		<?php include('template-parts/FirstPost.php'); ?>
+		<?php include('/template-parts/FirstPost.php'); ?>
 				
 		
 	<!---Articulos-previo-->
 	</section>
 		
 <!-----SECCION__ARTICULOS___CATGORIAS--->
+<?php include("template-parts/Categorias/PostporCategoria.php");?>
 
 <!--Internacionales--><!--Internacionales--><!--Internacionales--><!--Internacionales-->
 <section id="ContenedorArticulos" class="section_article">

@@ -54,16 +54,16 @@
 				
 		
 			
-				<div class="NabarSocial">
-					<ul class="MenuSocial" >
-						<li class="item"><a href="#" class="link icon-twitter"></a></li>
-						<li class="item"><a class="link icon-instagram" href="#"></a></li>
-						<li class="item"><a class="link icon-facebook" href="#"></a></li>
-						<li class="item"><a class="link icon-play" href="#"></a></li>	
-						<li class="item"><a class="link icon-telegram" href="#"></a></li>
-					</ul>
-				</div>
-			</div>
+		<div class="NabarSocial">
+			<ul class="MenuSocial" >
+				<li class="item"><a class="link icon-twitter"   href="https://mobile.twitter.com/The_worldtime/media"></a></li>
+				<li class="item"><a class="link icon-instagram" href="https://instagram.com/theworldtimenews?igshid=gv3i08nasueq"></a></li>
+				<li class="item"><a class="link icon-facebook" href="https://www.facebook.com/The-World-Time-News-132200781687422/?ref=bookmarks"></a></li>
+				<li class="item"><a class="link icon-play" href="https://m.youtube.com/channel/UCWbF-Q_iQfLUmQ3eJUn2ZRA?disable_polymer=true&app=m&persist_app=1"></a></li>	
+				<li class="item"><a class="link icon-telegram" href="https://t.me/theworldtimenews"></a></li>
+			</ul>
+		</div>
+	</div>
 			
 		
 		<?php dynamic_sidebar("search-1"); ?>

@@ -2,7 +2,13 @@
 	<div class="container-Articulos-Previos">
 
 
-<?php  $PostNumero=0; if ( have_posts() ) : while ( $PostNumero<3 ) : $PostNumero+=1; the_post(); ?>
+		<?php query_posts("paged=$paged&posts_per_page=3");	?>
+	
+	<?php 
+	
+	if ( have_posts() ) :
+	while ( have_posts() ) : the_post();
+	?>
 	
 	
 	<article class="Articulos-Previos">
@@ -26,7 +32,8 @@
 							$result = substr($excerpt, 0, strrpos($excerpt, ' '));
 							echo $result;
 
-							the_Category();
+					
+					
 
 							?>
 						
@@ -49,5 +56,6 @@
 
 <?php endif; ?>
 		
+			<?php wp_reset_query(); ?>
 	</div>	
 <!---Articulos-previo-->

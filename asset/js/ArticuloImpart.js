@@ -39,16 +39,16 @@
  
 
  
-var AgregarActive = document.getElementsByClassName("link")[0].style.background="red";
+// var AgregarActive = document.getElementsByClassName("link")[0].style.background="red";
  
-var Menu = document.getElementById("Menu_Action");
-var item = Menu.getElementsByClassName("link");
+// var Menu = document.getElementById("Menu_Action");
+// var item = Menu.getElementsByClassName("link");
 			
-for(var i = 0; i < item.length; i++){
-	  item[i].addEventListener("click", function(){
-			var current = document.getElementsByClassName("active");
-			current[0].className = current[0].className.replace("active", "");
-			this.className += " active";
-	  });
+// for(var i = 0; i < item.length; i++){
+	  // item[i].addEventListener("click", function(){
+			// var current = document.getElementsByClassName("active");
+			// current[0].className = current[0].className.replace("active", "");
+			// this.className += " active";
+	  // });
 	  
-}
+// }
