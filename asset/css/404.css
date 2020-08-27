@@ -1,3 +1,4 @@
+
 *{
 	margin:0px;
 	padding:0px;
@@ -20,17 +21,29 @@ body{
 	border:1px solid grey;
 	height:93%;
 	padding:10px;	
+	
+		  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  
+  
+  background-image:url("../img/planet-581239_1280.jpg");
+  background-size:cover;
 }
 
+p,h1,h2,a{
+	color:white;
+}
 .error-404{
 	margin-top:60px;
 	
+
+	
 }
 
-.text-error-404{
-	font-size:60px;
-	margin-bottom:12px;
-}
+
+
 
 
 .page-header{
@@ -53,6 +66,15 @@ body{
 	
 }
 
+/********************Media**********************//********************Media**********************/
+@media(min-width:768px) and (max-width:1280px){
+.text-error-404{
+	font-size:60px;
+	margin-bottom:12px;
+	
+}
+
+
 .page-content>p{
 	font-size:18px;
 	text-align:center;
@@ -63,7 +85,6 @@ body{
 	
 }
 
-/* center> */
 .page-content>.search-form{
 
 /* background:red; */
@@ -112,4 +133,323 @@ body{
 	padding:10px;
 	
 }
+
+}
+/*************************Media************************/
+/**********************Grande***************/
+@media(min-width:768px) and (max-width:1280px){
+
+.text-error-404{
+	font-size:80px;
+	margin-bottom:12px;
+
+}
+
+
+
+.page-content>p{
+	font-size:18px;
+	text-align:center;
+	font-weight:bold;
+	margin-bottom:10px;
+	
+	
+	
+}
+
+.page-content>.search-form{
+
+/* background:red; */
+
+		list-style:none;
+		display: flex;
+		flex-direction:column;
+		justify-content: center;
+		align-items: center;
+		text-align:center;
+		padding:10px;
+
+
+
+
+	}
+.page-content>.search-form>label>.search-field{
+		
+	border-radius:20px;
+	border:2px solid grey;
+	width:300px;
+	height:35px;
+	margin-bottom:10px;	 
+	text-align:center;
+	
+}
+
+.page-content>.search-form>.search-submit{
+	
+	border-radius:20px;
+	border:2px solid grey;
+	background:#003399;
+	color:white;
+	padding:15px;
+
+}
+
+.bottonVolver{
+	
+	border-radius:20px;
+	border:2px solid grey;
+	background:#003399;
+	color:white;
+	text-decoration:none;
+	
+	padding:10px;
+	
+}
+
+}
+/**********************Grande***************/
+/*********Extra-Grande*****************//*********Extra-Grande*****************/
+
+@media(min-width:1445px) and (max-width: 1920px){
+
+.text-error-404{
+	font-size:130px;
+	margin-bottom:12px;
+	
+}
+
+
+
+.page-content>p{
+	font-size:18px;
+	text-align:center;
+	font-weight:bold;
+	margin-bottom:10px;
+	
+	
+	
+}
+
+.page-content>.search-form{
+		list-style:none;
+		display: flex;
+		flex-direction:column;
+		justify-content: center;
+		align-items: center;
+		text-align:center;
+		padding:10px;
+
+
+
+
+	}
+.page-content>.search-form>label>.search-field{
+		
+	border-radius:20px;
+	border:2px solid grey;
+	width:300px;
+	height:35px;
+	margin-bottom:10px;	 
+	text-align:center;
+	
+}
+
+.page-content>.search-form>.search-submit{
+	
+	border-radius:20px;
+	border:2px solid grey;
+	background:#003399;
+	color:white;
+	padding:15px;
+
+}
+
+.bottonVolver{
+	
+	border-radius:20px;
+	border:2px solid grey;
+	background:#003399;
+	color:white;
+	text-decoration:none;
+	
+	padding:10px;
+	
+}
+
+
+}
+/*********Extra-Grande*****************//*********Extra-Grande*****************/
+/*************************Pequeño-POTRAIT************************************/
+
+@media(min-width:320px) and (max-width: 768px) and (orientation:portrait){
+
+.text-error-404{
+	font-size:60px;
+	margin-bottom:12px;
+	color:red;
+}
+
+.page-content>p{
+	font-size:18px;
+	text-align:center;
+	font-weight:bold;
+	margin-bottom:10px;
+	
+	
+	
+}
+
+.page-content>.search-form{
+
+/* background:red; */
+
+		list-style:none;
+		display: flex;
+		flex-direction:column;
+		justify-content: center;
+		align-items: center;
+		text-align:center;
+		padding:10px;
+
+
+
+
+	}
+.page-content>.search-form>label>.search-field{
+		
+	border-radius:20px;
+	border:2px solid grey;
+	width:300px;
+	height:35px;
+	margin-bottom:10px;	 
+	text-align:center;
+	
+}
+
+.page-content>.search-form>.search-submit{
+	
+	border-radius:20px;
+	border:2px solid grey;
+	background:#003399;
+	color:white;
+	padding:15px;
+
+}
+
+.bottonVolver{
+	
+	border-radius:20px;
+	border:2px solid grey;
+	background:#003399;
+	color:white;
+	text-decoration:none;
+	
+	padding:10px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+/*************************Pequeño-POTRAIT************************************/
+/*****************************Pequeño-landscape**************************/
+@media(min-width:320px) and (max-width: 768px) and (orientation:landscape){
+
+.text-error-404{
+	font-size:60px;
+	margin-bottom:12px;
+	color:red;
+}
+
+.page-content>p{
+	font-size:18px;
+	text-align:center;
+	font-weight:bold;
+	margin-bottom:10px;
+	
+	
+	
+}
+
+.page-content>.search-form{
+
+/* background:red; */
+
+		list-style:none;
+		display: flex;
+		flex-direction:column;
+		justify-content: center;
+		align-items: center;
+		text-align:center;
+		padding:10px;
+
+
+
+
+	}
+.page-content>.search-form>label>.search-field{
+		
+	border-radius:20px;
+	border:2px solid grey;
+	width:300px;
+	height:35px;
+	margin-bottom:10px;	 
+	text-align:center;
+	
+}
+
+.page-content>.search-form>.search-submit{
+	
+	border-radius:20px;
+	border:2px solid grey;
+	background:#003399;
+	color:white;
+	padding:15px;
+
+}
+
+.bottonVolver{
+	
+	border-radius:20px;
+	border:2px solid grey;
+	background:#003399;
+	color:white;
+	text-decoration:none;
+	
+	padding:10px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+/*****************************Pequeño-landscape**************************/
 /******404*********/

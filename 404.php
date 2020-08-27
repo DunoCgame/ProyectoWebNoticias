@@ -19,7 +19,7 @@
 				
 				<header class="page-header">
 
-					<h1 class="text-error-404">ERROR 404</h1>
+					<h1 class="text-error-404">404</h1>
 					<h2 class="text-error"><?php esc_html_e( 'the page or entry you are looking for cannot be found' ); ?></h3>
 
 				</header>
